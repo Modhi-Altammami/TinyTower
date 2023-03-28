@@ -6,8 +6,8 @@ public class RoomPlacement : MonoBehaviour
 {
     [SerializeField] GameObject indicator;
     [SerializeField] List<GameObject> Rays;
-    bool isPlaced;
-    bool isOverlapped;
+    [SerializeField] bool isPlaced;
+    [SerializeField] bool isOverlapped;
     Vector3 mousePosition;
     Camera cam;
     Vector3 mouseInput;
@@ -70,6 +70,7 @@ public class RoomPlacement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (isPlaced) return;
         Debug.Log("exit");
         isOverlapped = false;
         indicator.SetActive(false);
