@@ -21,9 +21,15 @@ public class RoomPlacement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveMouse();
+        if (!isPlaced)
+        {
+            MoveMouse();
 
-        CheckValidPlace();
+            if (CheckValidPlace() && Input.GetMouseButtonDown(0) && !isOverlapped)
+            {
+                isPlaced = true;
+            }
+        }
     }
 
     void MoveMouse()
@@ -42,23 +48,30 @@ public class RoomPlacement : MonoBehaviour
         {
             Ray ray = new Ray(rayObject.gameObject.transform.position, Vector3.down);
             RaycastHit hitData;
-            if (Physics.Raycast(ray, out hitData , 1.5f))
-            {
-                indicator.SetActive(false);
-                return true;
+            if (!Physics.Raycast(ray, out hitData , 1.5f))
+            {  
+                indicator.SetActive(true);
+                return false;
             }  
         }
-        indicator.SetActive(true);
-        return false;
+
+        indicator.SetActive(false);
+        return true;
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (isPlaced) return;
+        Debug.Log("enter");
+        isOverlapped = true;
+        indicator.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        
+        Debug.Log("exit");
+        isOverlapped = false;
+        indicator.SetActive(false);
     }
 }
