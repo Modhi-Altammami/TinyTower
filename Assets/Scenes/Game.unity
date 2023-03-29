@@ -719,6 +719,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642943757}
   m_CullTransparentMesh: 1
+--- !u!1 &662630584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 662630585}
+  m_Layer: 0
+  m_Name: Building
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &662630585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662630584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.689549, y: -0.36449906, z: 1.9999995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &709097598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1543,7 @@ MonoBehaviour:
         m_MethodName: CreateRoom
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8050961739075531367, guid: dcf637883dd28468d916a5d6874ca15a,
+          m_ObjectArgument: {fileID: 5871893521669070809, guid: cbfac30e5f1e44954b8e19f326809c02,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -1787,6 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d81ee63c7274ded971fab343b9d0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Building: {fileID: 662630585}
 --- !u!1 &1489570885
 GameObject:
   m_ObjectHideFlags: 0

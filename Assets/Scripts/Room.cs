@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Room : MonoBehaviour
 {
     [SerializeField] GameObject rightWall;
     [SerializeField] GameObject leftWall;
+    [SerializeField] GameObject leftWallWithDoor;
+    [SerializeField] GameObject rightWallWithDoor;
 
-   
 
     protected void CheckWalls(GameObject room)
     {
@@ -16,10 +14,14 @@ public class Room : MonoBehaviour
         RaycastHit hitData;
         if (Physics.Raycast(ray, out hitData, 1f))
         {
-            Debug.Log("hit room: "+ hitData.collider.tag + " the ray comes from " + room.tag);
 
             if (hitData.collider.tag.Equals(room.tag))
             {
+                rightWall.SetActive(false);
+            }
+            else
+            {
+                rightWallWithDoor.SetActive(true);
                 rightWall.SetActive(false);
             }
         }
@@ -31,10 +33,14 @@ public class Room : MonoBehaviour
         ray = new Ray(leftWall.gameObject.transform.position, Vector3.left);
         if (Physics.Raycast(ray, out hitData, 1f))
         {
-            Debug.Log("hit room: " + hitData.collider.tag + " the ray comes from " + room.tag);
 
             if (hitData.collider.tag.Equals(room.tag))
             {
+                leftWall.SetActive(false);
+            }
+            else
+            {
+                leftWallWithDoor.SetActive(true);
                 leftWall.SetActive(false);
             }
         }

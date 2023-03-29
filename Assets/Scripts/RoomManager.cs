@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+
+    [SerializeField] Transform Building;
     public void CreateRoom(GameObject room)
     {
-        Instantiate(room);
+        Instantiate(room , Building);
     }
 }
