@@ -28,6 +28,7 @@ public class Room : MonoBehaviour
         else
         {
             rightWall.SetActive(true);
+            rightWallWithDoor.SetActive(false);
         }
 
         ray = new Ray(leftWall.gameObject.transform.position, Vector3.left);
@@ -47,6 +48,7 @@ public class Room : MonoBehaviour
         else
         {
             leftWall.SetActive(true);
+            leftWallWithDoor.SetActive(false);
         }
     }
 
