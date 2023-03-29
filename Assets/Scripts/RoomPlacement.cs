@@ -44,7 +44,13 @@ public class RoomPlacement : MonoBehaviour
 
     bool CheckValidPlace()
     {
-        foreach(GameObject rayObject in Rays)
+        if (isOverlapped)
+        {
+            indicator.SetActive(true);
+            return false;
+        }
+
+        foreach (GameObject rayObject in Rays)
         {
             Ray ray = new Ray(rayObject.gameObject.transform.position, Vector3.down);
             RaycastHit hitData;
@@ -65,7 +71,6 @@ public class RoomPlacement : MonoBehaviour
         if (isPlaced) return;
         Debug.Log("enter");
         isOverlapped = true;
-        indicator.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
@@ -73,6 +78,5 @@ public class RoomPlacement : MonoBehaviour
         if (isPlaced) return;
         Debug.Log("exit");
         isOverlapped = false;
-        indicator.SetActive(false);
     }
 }
