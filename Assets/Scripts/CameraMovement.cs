@@ -12,6 +12,11 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MoveCamera();
+    }
+
+    void MoveCamera()
+    {
         if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < 10)
         {
             targetPos = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
@@ -30,10 +35,5 @@ public class CameraMovement : MonoBehaviour
         }
 
         transform.position = targetPos;
-    }
-
-    void MoveCamera()
-    {
-        
     }
 }

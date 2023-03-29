@@ -69,14 +69,14 @@ public class RoomPlacement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (isPlaced) return;
-        Debug.Log("enter");
+        //Debug.Log("enter");
         isOverlapped = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (isPlaced) return;
-        Debug.Log("exit");
+        //Debug.Log("exit");
         isOverlapped = false;
     }
 }

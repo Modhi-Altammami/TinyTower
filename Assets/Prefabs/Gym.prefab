@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 8050961738253021406}
   - component: {fileID: 8050961738253021409}
   - component: {fileID: 8050961738253021408}
-  - component: {fileID: 8050961738253021407}
   m_Layer: 0
   m_Name: BackWall
   m_TagString: Untagged
@@ -146,19 +145,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8050961738253021407
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8050961738253021405}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8050961738364176595
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,9 +156,8 @@ GameObject:
   - component: {fileID: 8050961738364176596}
   - component: {fileID: 8050961738364176599}
   - component: {fileID: 8050961738364176598}
-  - component: {fileID: 8050961738364176597}
   m_Layer: 0
-  m_Name: LeftWall
+  m_Name: RightWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,19 +228,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8050961738364176597
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8050961738364176595}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8050961738428310990
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +239,6 @@ GameObject:
   - component: {fileID: 8050961738428310991}
   - component: {fileID: 8050961738428310994}
   - component: {fileID: 8050961738428310993}
-  - component: {fileID: 8050961738428310992}
   m_Layer: 0
   m_Name: Indicator
   m_TagString: Untagged
@@ -340,19 +311,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8050961738428310992
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8050961738428310990}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8050961738914170055
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +357,7 @@ GameObject:
   - component: {fileID: -5676512950456294803}
   m_Layer: 0
   m_Name: Gym
-  m_TagString: Untagged
+  m_TagString: Gym
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -484,7 +442,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3eb360f82dd74ebda91067e6811b440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdown: {fileID: 0}
+  rightWall: {fileID: 8050961738364176595}
+  leftWall: {fileID: 8050961739984905194}
 --- !u!1 &8050961739566312074
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +455,6 @@ GameObject:
   - component: {fileID: 8050961739566312075}
   - component: {fileID: 8050961739566312078}
   - component: {fileID: 8050961739566312077}
-  - component: {fileID: 8050961739566312076}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -569,19 +527,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8050961739566312076
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8050961739566312074}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.99999994, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8050961739717463764
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,9 +605,8 @@ GameObject:
   - component: {fileID: 8050961739984905195}
   - component: {fileID: 8050961739984905198}
   - component: {fileID: 8050961739984905197}
-  - component: {fileID: 8050961739984905196}
   m_Layer: 0
-  m_Name: RightWall
+  m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,19 +677,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8050961739984905196
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8050961739984905194}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8050961740071485782
 GameObject:
   m_ObjectHideFlags: 0
