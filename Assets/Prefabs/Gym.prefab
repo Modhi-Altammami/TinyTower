@@ -533,6 +533,7 @@ MonoBehaviour:
   leftWall: {fileID: 5871893522639261268}
   leftWallWithDoor: {fileID: 137611632923381559}
   rightWallWithDoor: {fileID: 137611634211169960}
+  type: 1
 --- !u!1 &5871893521850093634
 GameObject:
   m_ObjectHideFlags: 0

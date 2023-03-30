@@ -25,7 +25,7 @@ public class RoomPlacement : MonoBehaviour
         {
             MoveMouse();
 
-            if (CheckValidPlace() && Input.GetMouseButtonDown(0) && !isOverlapped)
+            if (CheckValidPlace() && Input.GetMouseButtonDown(0))
             {
                 isPlaced = true;
             }

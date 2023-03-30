@@ -1,11 +1,19 @@
 using UnityEngine;
 
+public enum RoomType
+{
+   Office,
+   Gym,
+   Restaurant
+}
+
 public class Room : MonoBehaviour
 {
     [SerializeField] GameObject rightWall;
     [SerializeField] GameObject leftWall;
     [SerializeField] GameObject leftWallWithDoor;
     [SerializeField] GameObject rightWallWithDoor;
+    [SerializeField] RoomType type;
 
 
     protected void CheckWalls(GameObject room)
@@ -14,16 +22,13 @@ public class Room : MonoBehaviour
         RaycastHit hitData;
         if (Physics.Raycast(ray, out hitData, 1f))
         {
-
-            if (hitData.collider.tag.Equals(room.tag))
-            {
-                rightWall.SetActive(false);
-            }
-            else
+            rightWall.SetActive(false);
+            if (!hitData.collider.GetComponent<Room>().type.Equals(type))
             {
                 rightWallWithDoor.SetActive(true);
-                rightWall.SetActive(false);
+
             }
+            
         }
         else
         {
@@ -34,15 +39,10 @@ public class Room : MonoBehaviour
         ray = new Ray(leftWall.gameObject.transform.position, Vector3.left);
         if (Physics.Raycast(ray, out hitData, 1f))
         {
-
-            if (hitData.collider.tag.Equals(room.tag))
-            {
-                leftWall.SetActive(false);
-            }
-            else
+            leftWall.SetActive(false);
+            if (!hitData.collider.GetComponent<Room>().type.Equals(type))
             {
                 leftWallWithDoor.SetActive(true);
-                leftWall.SetActive(false);
             }
         }
         else
@@ -53,6 +53,8 @@ public class Room : MonoBehaviour
     }
 
 }
+
+
 
 
 
