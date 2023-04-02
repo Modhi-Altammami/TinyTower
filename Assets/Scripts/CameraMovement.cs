@@ -1,39 +1,41 @@
-
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+namespace modi.TinyTower
 {
-    Vector3 targetPos;
+    public class CameraMovement : MonoBehaviour
+    {
+        Vector3 targetPos;
 
-    private void Start()
-    {
-        targetPos = transform.position;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        MoveCamera();
-    }
-
-    void MoveCamera()
-    {
-        if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < 10)
+        private void Start()
         {
-            targetPos = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+            targetPos = transform.position;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > -10)
+        // Update is called once per frame
+        void Update()
         {
-            targetPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y <  15)
-        {
-            targetPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > 0)
-        {
-            targetPos = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            MoveCamera();
         }
 
-        transform.position = targetPos;
+        void MoveCamera()
+        {
+            if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < 10)
+            {
+                targetPos = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > -10)
+            {
+                targetPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < 15)
+            {
+                targetPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > 0)
+            {
+                targetPos = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            }
+
+            transform.position = targetPos;
+        }
     }
 }

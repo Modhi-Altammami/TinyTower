@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Office : Room
+namespace modi.TinyTower
 {
-   
-    // Update is called once per frame
-   
+    public class Office : Room
+    {
+
+
+    }
 }
