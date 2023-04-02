@@ -25,7 +25,7 @@ public class CameraMovement : MonoBehaviour
         {
             targetPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y <  15)
         {
             targetPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         }

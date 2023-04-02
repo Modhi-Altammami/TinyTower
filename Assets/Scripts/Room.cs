@@ -123,12 +123,24 @@ public class Room : MonoBehaviour
 
     protected void CalculateCost()
     {
-        cost += initialCost;
+        cost = initialCost;
     }
 
     protected void CalculateHappiness()
     {
-        happiness += income % 10 - cost % 10;
+        if ((int)type == 0)
+        {
+            happiness += income / 10 - cost / 10;
+        }
+        if ((int)type == 1)
+        {
+            happiness += income / 2 - cost / 5;
+        }
+        if ((int)type == 2)
+        {
+            happiness += income  - cost / 5;
+        }
+
         RoomManager.instance.happiness = happiness;
     }
 

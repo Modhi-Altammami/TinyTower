@@ -31,6 +31,7 @@ public class RoomManager : MonoBehaviour
         broughtRooms = new List<Room>();
         wallet = 25000;
         happiness = 0;
+        happinessText.text = happiness.ToString();
         walletText.text = "$" + wallet.ToString();
     }
 
