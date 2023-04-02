@@ -610,8 +610,6 @@ MonoBehaviour:
   - {fileID: 6242543100236989701}
   - {fileID: 6242543100755803198}
   - {fileID: 6242543102046034354}
-  isPlaced: 0
-  isOverlapped: 0
 --- !u!54 &6242543100602567314
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -653,6 +651,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d149eb3a309594cd2a449eeec4adb5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  price: 3000
+  cost: 150
+  income: 15
+  happiness: -10
   rightWall: {fileID: 6242543100105175082}
   leftWall: {fileID: 6242543101830716179}
   leftWallWithDoor: {fileID: 7585697057644899568}

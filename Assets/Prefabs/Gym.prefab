@@ -486,8 +486,6 @@ MonoBehaviour:
   - {fileID: 5871893521850093634}
   - {fileID: 5871893521566706041}
   - {fileID: 5871893522323279093}
-  isPlaced: 0
-  isOverlapped: 0
 --- !u!54 &5871893521669070805
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -529,11 +527,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3eb360f82dd74ebda91067e6811b440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
+  price: 2000
+  cost: 200
+  income: 20
+  happiness: 2
   rightWall: {fileID: 5871893521982449005}
   leftWall: {fileID: 5871893522639261268}
   leftWallWithDoor: {fileID: 137611632923381559}
   rightWallWithDoor: {fileID: 137611634211169960}
-  type: 1
 --- !u!1 &5871893521850093634
 GameObject:
   m_ObjectHideFlags: 0
