@@ -1,8 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
 public class RoomManager : MonoBehaviour
 {
     public static RoomManager instance;
+
+    [SerializeField] Transform Building;
+    [SerializeField] TextMeshProUGUI happinessText;
+    [SerializeField] TextMeshProUGUI walletText;
+
+    List<Room> broughtRooms;
+    public float wallet;
+    public float happiness;
 
     void Awake()
     {
@@ -15,9 +26,40 @@ public class RoomManager : MonoBehaviour
 
     }
 
-    [SerializeField] Transform Building;
+    private void Start()
+    {
+        broughtRooms = new List<Room>();
+        wallet = 25000;
+        happiness = 0;
+        walletText.text = "$" + wallet.ToString();
+    }
+
+
+
     public void CreateRoom(GameObject room)
     {
-        Instantiate(room , Building);
+        Room roomObj = room.GetComponent<Room>();
+
+        if (roomObj.Price < wallet)
+        {
+            Instantiate(room , Building);
+            broughtRooms.Add(roomObj);
+            deductPrice(roomObj);
+            updateWallet();
+        } 
     }
+
+     void deductPrice(Room room)
+    {
+        wallet +=  - room.Price ;
+    }
+
+
+    public void updateWallet()
+    {
+        walletText.text = "$" + wallet.ToString();
+        happinessText.text = happiness.ToString();
+    }
+
+    
 }
