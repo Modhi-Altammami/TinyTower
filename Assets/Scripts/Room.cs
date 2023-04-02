@@ -52,6 +52,7 @@ public class Room : MonoBehaviour
     }
 
     float initialCost;
+    float initialIncome;
     float _time;
 
     protected static event Action CalculateEconomyEvent;
@@ -59,6 +60,7 @@ public class Room : MonoBehaviour
     private void Start()
     {
         initialCost = cost;
+        initialIncome = income;
 
         CalculateEconomyEvent += CalculateIncome;
         CalculateEconomyEvent += CalculateCost;
@@ -118,12 +120,38 @@ public class Room : MonoBehaviour
 
     protected void CalculateIncome()
     {
-        income += income;
+
+        if ((int)type == 0)
+        {
+            income += income;
+        }
+        if ((int)type == 1)
+        {
+            income+=income/2;
+        }
+        if ((int)type == 2)
+        {
+            income += income/3;
+        }
+
     }
 
     protected void CalculateCost()
     {
         cost = initialCost;
+
+        if ((int)type == 0)
+        {
+            cost = initialCost/2;
+        }
+        if ((int)type == 1)
+        {
+            cost = initialCost; 
+        }
+        if ((int)type == 2)
+        {
+            cost = initialCost*2; 
+        }
     }
 
     protected void CalculateHappiness()
@@ -138,7 +166,7 @@ public class Room : MonoBehaviour
         }
         if ((int)type == 2)
         {
-            happiness += income  - cost / 5;
+            happiness += income*2 ;
         }
 
         RoomManager.instance.happiness = happiness;
@@ -146,7 +174,7 @@ public class Room : MonoBehaviour
 
     protected void CalculateWallet()
     {
-        RoomManager.instance.wallet+= income - (cost);
+        RoomManager.instance.wallet += (income - cost);
     }
 
 }
