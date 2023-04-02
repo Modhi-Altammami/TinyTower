@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 public enum RoomType
 {
    Office,
@@ -127,31 +127,19 @@ public class Room : MonoBehaviour
         }
         if ((int)type == 1)
         {
-            income+=income/2;
+            income += income/ Random.Range(1, 2);
         }
         if ((int)type == 2)
         {
-            income += income/3;
+            income += income/Random.Range(1, 4);
         }
 
     }
 
     protected void CalculateCost()
     {
-        cost = initialCost;
 
-        if ((int)type == 0)
-        {
-            cost = initialCost/2;
-        }
-        if ((int)type == 1)
-        {
-            cost = initialCost; 
-        }
-        if ((int)type == 2)
-        {
-            cost = initialCost*2; 
-        }
+        cost = initialCost;
     }
 
     protected void CalculateHappiness()
