@@ -20,19 +20,19 @@ namespace modi.TinyTower
         {
             if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < 10)
             {
-                targetPos = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                targetPos.x++;
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > -10)
             {
-                targetPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                targetPos.x--;
             }
             if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < 15)
             {
-                targetPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                targetPos.y++;
             }
             if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > 0)
             {
-                targetPos = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                targetPos.y--;
             }
 
             transform.position = targetPos;
