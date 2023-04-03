@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using System;
 namespace modi.TinyTower
 {
     public class RoomManager : MonoBehaviour
@@ -40,8 +40,7 @@ namespace modi.TinyTower
             broughtRooms = new List<Room>();
             wallet = 250;
             happiness = 0;
-            happinessText.text = happiness.ToString();
-            walletText.text = "$" + wallet.ToString();
+            UpdateWallet();
         }
 
 
@@ -80,8 +79,8 @@ namespace modi.TinyTower
         /// </summary>
         public void UpdateWallet()
         {
-            walletText.text = "$" + wallet.ToString();
-            happinessText.text = happiness.ToString();
+            happinessText.text = Math.Round(happiness, 1).ToString();
+            walletText.text = "$" + Math.Round(wallet, 1);
         }
     }
 }
