@@ -3,6 +3,9 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace modi.TinyTower {
+    /// <summary>
+    /// Room type
+    /// </summary>
     public enum RoomType
     {
         Office,
@@ -59,6 +62,9 @@ namespace modi.TinyTower {
 
         protected static event Action CalculateEconomyEvent;
 
+        /// <summary>
+        /// subscribe to the functions that will be invoked every 5
+        /// </summary>
         private void Start()
         {
             initialCost = cost;
@@ -81,6 +87,10 @@ namespace modi.TinyTower {
                 _time = 0;
             }
         }
+
+        /// <summary>
+        /// check the left and right of the room to see neighbouring rooms
+        /// </summary>
         protected void CheckWalls()
         {
             Ray ray = new Ray(rightWall.gameObject.transform.position, Vector3.right);
@@ -113,7 +123,12 @@ namespace modi.TinyTower {
                 leftWallWithDoor.SetActive(false);
             }
         }
-
+        /// <summary>
+        /// the income will change based on room type
+        /// office : the income is stable
+        /// gym: the income can be semi stable
+        /// resturant: the income can be unstable
+        /// </summary>
         protected void CalculateIncome()
         {
             if ((int)type == 0)
@@ -129,12 +144,19 @@ namespace modi.TinyTower {
                 income += initialIncome / Random.Range(1, 4);
             }
         }
-
+        /// <summary>
+        /// the cost is fixed for all room type
+        /// </summary>
         protected void CalculateCost()
         {
             cost = initialCost;
         }
-
+        /// <summary>
+        /// the happiness is dependent on the income and cost.
+        /// office : the office have a low increase
+        /// gym: the office has a moderate increase
+        /// resutrant: the happiness has a high increase
+        /// </summary>
         protected void CalculateHappiness()
         {
             if ((int)type == 0)
@@ -143,16 +165,18 @@ namespace modi.TinyTower {
             }
             if ((int)type == 1)
             {
-                happiness += income / 2 - cost / 5;
+                happiness += income / 2 - cost / 2;
             }
             if ((int)type == 2)
             {
                 happiness += income * 2;
             }
 
-            RoomManager.instance.happiness = happiness;
+            RoomManager.instance.happiness += happiness;
         }
-
+        /// <summary>
+        /// the wallet is added from income minus cost
+        /// </summary>
         protected void CalculateWallet()
         {
             RoomManager.instance.wallet += (income - cost);

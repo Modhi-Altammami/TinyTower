@@ -512,10 +512,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  price: 4000
-  cost: 400
-  income: 40
-  happiness: 4
+  price: 40
+  cost: 4
+  income: 4
+  happiness: 15
   rightWall: {fileID: 5215102299811604631}
   leftWall: {fileID: 5215102300236612526}
   leftWallWithDoor: {fileID: 1615929596642849107}

@@ -34,6 +34,9 @@ namespace modi.TinyTower
             }
         }
 
+        /// <summary>
+        /// move the mouse to follow the 3d object
+        /// </summary>
         void MoveMouse()
         {
             mouseInput = Input.mousePosition;
@@ -43,7 +46,10 @@ namespace modi.TinyTower
             mousePosition.y = Mathf.Round(Mathf.Clamp(mousePosition.y, 0, int.MaxValue));
             transform.position = mousePosition;
         }
-
+        /// <summary>
+        /// check if the place is valid after mouse movement
+        /// </summary>
+        /// <returns></returns>
         bool CheckValidPlace()
         {
             if (isOverlapped)
@@ -67,17 +73,22 @@ namespace modi.TinyTower
             return true;
 
         }
-
+        /// <summary>
+        /// check if the rooms is overlapped
+        /// </summary>
+        /// <param name="other"></param>
         private void OnTriggerStay(Collider other)
         {
             if (isPlaced) return;
-            //Debug.Log("enter");
             isOverlapped = true;
         }
+        /// <summary>
+        /// check if the rooms is not overlapped anymore 
+        /// </summary>
+        /// <param name="other"></param>
         private void OnTriggerExit(Collider other)
         {
             if (isPlaced) return;
-            //Debug.Log("exit");
             isOverlapped = false;
         }
     }

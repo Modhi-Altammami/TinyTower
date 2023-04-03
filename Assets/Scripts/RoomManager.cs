@@ -30,14 +30,17 @@ namespace modi.TinyTower
         private void Start()
         {
             broughtRooms = new List<Room>();
-            wallet = 25000;
+            wallet = 250;
             happiness = 0;
             happinessText.text = happiness.ToString();
             walletText.text = "$" + wallet.ToString();
         }
 
 
-
+        /// <summary>
+        /// create room and add it in the brought rooms list
+        /// </summary>
+        /// <param name="room"></param>
         public void CreateRoom(GameObject room)
         {
             Room roomObj = room.GetComponent<Room>();
@@ -51,12 +54,18 @@ namespace modi.TinyTower
             }
         }
 
+        /// <summary>
+        /// deduct the price of the brought room
+        /// </summary>
+        /// <param name="room"></param>
         void deductPrice(Room room)
         {
             wallet += -room.Price;
         }
 
-
+        /// <summary>
+        /// display the information
+        /// </summary>
         public void updateWallet()
         {
             walletText.text = "$" + wallet.ToString();
