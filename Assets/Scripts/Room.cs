@@ -89,7 +89,7 @@ namespace modi.TinyTower {
         }
 
         /// <summary>
-        /// check the left and right of the room to see neighbouring rooms
+        /// check the left and right of the room to see if neighbouring rooms exists
         /// </summary>
         protected void CheckWalls()
         {
