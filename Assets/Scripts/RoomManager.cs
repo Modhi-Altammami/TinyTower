@@ -49,8 +49,8 @@ namespace modi.TinyTower
             if (roomObj.Price < wallet)
             {
                 Instantiate(room, Building);
-                deductPrice(roomObj);
-                updateWallet();
+                DeductPrice(roomObj);
+                UpdateWallet();
                 broughtRooms.Add(roomObj);
             }
             else
@@ -63,7 +63,7 @@ namespace modi.TinyTower
         /// deduct the price of the brought room
         /// </summary>
         /// <param name="room"></param>
-        void deductPrice(Room room)
+        void DeductPrice(Room room)
         {
             wallet += -room.Price;
         }
@@ -71,7 +71,7 @@ namespace modi.TinyTower
         /// <summary>
         /// display the information
         /// </summary>
-        public void updateWallet()
+        public void UpdateWallet()
         {
             walletText.text = "$" + wallet.ToString();
             happinessText.text = happiness.ToString();

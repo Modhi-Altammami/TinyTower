@@ -7,17 +7,17 @@ namespace modi.TinyTower
     public class RoomPlacement : MonoBehaviour
     {
         [SerializeField] GameObject indicator;
-        [SerializeField] List<GameObject> Rays;
+        [SerializeField] List<GameObject> rays;
         bool isPlaced;
         bool isOverlapped;
         Vector3 mousePosition;
-        Camera cam;
+        Camera Cam;
         Vector3 mouseInput;
 
         // Start is called before the first frame update
         void Start()
         {
-            cam = Camera.main;
+            Cam = Camera.main;
         }
 
         // Update is called once per frame
@@ -41,7 +41,7 @@ namespace modi.TinyTower
         {
             mouseInput = Input.mousePosition;
             mouseInput.z = 10;
-            mousePosition = cam.ScreenToWorldPoint(mouseInput);
+            mousePosition = Cam.ScreenToWorldPoint(mouseInput);
             mousePosition.x = Mathf.Round(mousePosition.x);
             mousePosition.y = Mathf.Round(Mathf.Clamp(mousePosition.y, 0, int.MaxValue));
             transform.position = mousePosition;
@@ -58,7 +58,7 @@ namespace modi.TinyTower
                 return false;
             }
 
-            foreach (GameObject rayObject in Rays)
+            foreach (GameObject rayObject in rays)
             {
                 Ray ray = new Ray(rayObject.gameObject.transform.position, Vector3.down);
                 RaycastHit hitData;

@@ -74,7 +74,7 @@ namespace modi.TinyTower {
             CalculateEconomyEvent += CalculateCost;
             CalculateEconomyEvent += CalculateHappiness;
             CalculateEconomyEvent += CalculateWallet;
-            CalculateEconomyEvent += RoomManager.instance.updateWallet;
+            CalculateEconomyEvent += RoomManager.instance.UpdateWallet;
 
         }
         void Update()
