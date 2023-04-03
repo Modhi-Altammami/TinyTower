@@ -11,6 +11,7 @@ namespace modi.TinyTower
         [SerializeField] Transform Building;
         [SerializeField] TextMeshProUGUI happinessText;
         [SerializeField] TextMeshProUGUI walletText;
+        [SerializeField] GameObject InsuffecientFunds;
 
         List<Room> broughtRooms;
         public float wallet;
@@ -51,6 +52,10 @@ namespace modi.TinyTower
                 deductPrice(roomObj);
                 updateWallet();
                 broughtRooms.Add(roomObj);
+            }
+            else
+            {
+                InsuffecientFunds.SetActive(true);
             }
         }
 

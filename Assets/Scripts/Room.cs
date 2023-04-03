@@ -131,7 +131,7 @@ namespace modi.TinyTower {
         /// </summary>
         protected void CalculateIncome()
         {
-            if ((int)type == 0)
+            if (type == 0)
             {
                 income += initialIncome;
             }
