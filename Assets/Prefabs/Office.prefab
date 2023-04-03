@@ -644,12 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicator: {fileID: 6242543100173425975}
-  Rays:
-  - {fileID: 6242543100257853702}
-  - {fileID: 6242543101594164803}
-  - {fileID: 6242543100236989701}
-  - {fileID: 6242543100755803198}
-  - {fileID: 6242543102046034354}
+  rays: []
 --- !u!54 &6242543100602567314
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -694,7 +689,7 @@ MonoBehaviour:
   type: 0
   price: 30
   cost: 3
-  income: 3
+  income: 10
   happiness: -10
   rightWall: {fileID: 6242543100105175082}
   leftWall: {fileID: 6242543101830716179}

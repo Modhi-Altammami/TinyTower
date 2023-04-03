@@ -145,7 +145,7 @@ namespace modi.TinyTower {
             }
         }
         /// <summary>
-        /// the cost is fixed for all room type
+        /// the cost is fixed for all room type for now
         /// </summary>
         protected void CalculateCost()
         {
@@ -153,29 +153,30 @@ namespace modi.TinyTower {
         }
         /// <summary>
         /// the happiness is dependent on the income and cost.
-        /// office : the office have a low increase
-        /// gym: the office has a moderate increase
-        /// resutrant: the happiness has a high increase
+        /// office : the office have a low increase (every 10$ of income = +1 of happiness)
+        /// gym: the office has a moderate increase  (every 2$ of income = +1 of happiness)
+        /// resturant: the happiness has a high increase (every $ of income = the same amount of happiness)
+        /// the income subtracted by the cost to balance the happiness 
         /// </summary>
         protected void CalculateHappiness()
         {
             if ((int)type == 0)
             {
-                happiness += income / 10 - cost / 10;
+                happiness += income / 10 - cost ;
             }
             if ((int)type == 1)
             {
-                happiness += income / 2 - cost / 2;
+                happiness += income / 2 - cost ;
             }
             if ((int)type == 2)
             {
-                happiness += income * 2;
+                happiness += income - cost;
             }
 
             RoomManager.instance.happiness += happiness;
         }
         /// <summary>
-        /// the wallet is added from income minus cost
+        /// the wallet is added from income minus cost (the price is subtracted in the payment process)
         /// </summary>
         protected void CalculateWallet()
         {

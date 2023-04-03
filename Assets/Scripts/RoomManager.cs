@@ -6,17 +6,21 @@ namespace modi.TinyTower
 {
     public class RoomManager : MonoBehaviour
     {
-        public static RoomManager instance;
 
         [SerializeField] Transform Building;
         [SerializeField] TextMeshProUGUI happinessText;
         [SerializeField] TextMeshProUGUI walletText;
         [SerializeField] GameObject InsuffecientFunds;
 
-        List<Room> broughtRooms;
+        public static RoomManager instance;
         public float wallet;
         public float happiness;
 
+        List<Room> broughtRooms;
+
+        /// <summary>
+        /// singleton
+        /// </summary>
         void Awake()
         {
             if (instance == null) // if instance is not initilized then instance is equal to class
@@ -28,6 +32,9 @@ namespace modi.TinyTower
 
         }
 
+        /// <summary>
+        /// declare the rooms list and display the initial happiness/wallet values
+        /// </summary>
         private void Start()
         {
             broughtRooms = new List<Room>();
@@ -69,7 +76,7 @@ namespace modi.TinyTower
         }
 
         /// <summary>
-        /// display the information
+        /// display the information to users
         /// </summary>
         public void UpdateWallet()
         {
