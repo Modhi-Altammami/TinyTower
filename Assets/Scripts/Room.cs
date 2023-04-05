@@ -69,6 +69,7 @@ namespace modi.TinyTower {
         {
             initialCost = cost;
             initialIncome = income;
+            RoomManager.instance.happiness += happiness;
 
             CalculateEconomyEvent += CalculateIncome;
             CalculateEconomyEvent += CalculateCost;
@@ -162,15 +163,15 @@ namespace modi.TinyTower {
         {
             if ((int)type == 0)
             {
-                happiness += income / 10 - cost ;
+                happiness = income / 10 - cost ;
             }
             if ((int)type == 1)
             {
-                happiness += income / 2 - cost ;
+                happiness = income / 2 - cost ;
             }
             if ((int)type == 2)
             {
-                happiness += income - cost;
+                happiness = income - cost;
             }
 
             RoomManager.instance.happiness += happiness;
